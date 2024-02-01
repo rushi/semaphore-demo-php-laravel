@@ -52,7 +52,8 @@ blocks:
             - cache restore
             - composer install
             - npm install
-            - ./vendor/bin/phpunit
+            - ./vendor/bin/phpunit --log-junit report.xml
+            - '[[ -f report.xml ]] && test-results publish --name "Test Report" report.xml'
   - name: Run Browser tests
     task:
       jobs:
