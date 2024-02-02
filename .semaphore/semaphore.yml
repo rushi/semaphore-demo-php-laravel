@@ -53,7 +53,7 @@ blocks:
             - composer install
             - npm install
             - ./vendor/bin/phpunit --log-junit report.xml
-            - '[[ -f report.xml ]] && test-results publish --name "Test Report" report.xml'
+            - '[[ -f report.xml ]] && test-results publish --parser phpunit report.xml'
   - name: Run Browser tests
     task:
       jobs:
